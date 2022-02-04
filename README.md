@@ -1,6 +1,6 @@
 # <p align="center"> TopolStudy </p>
 ## Running the App
---> To run the App, we use :
+To run the App, we use :
 ```
 python manage.py runserver
 ```
