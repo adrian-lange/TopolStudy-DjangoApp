@@ -5,7 +5,7 @@
   <ul class="topics__list">
     <li>
       <a href="{% url 'home' %}" class="active"
-        >All <span>{{topics.count}}</span></a
+        >All <span>{{topics_list.count}}</span></a
       >
     </li>
     {% for topic in topics %}
@@ -16,6 +16,7 @@
     </li>
     {% endfor %}
   </ul>
+  {% if topics_list.count > 5 %}
   <a class="btn btn--link" href="{% url 'topics' %}">
     More
     <svg
@@ -29,4 +30,5 @@
       <path d="M16 21l-13-13h-3l16 16 16-16h-3l-13 13z"></path>
     </svg>
   </a>
+  {% endif %}
 </div>
