@@ -1,3 +1,4 @@
+from pyexpat import model
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.deletion import CASCADE
@@ -38,3 +39,12 @@ class Message(models.Model):
 
     def __str__(self):
         return self.body[0:50]
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=200, null=True)
+    email = models.EmailField(unique=True, null=True)
+    bio = models.TextField(null=True)
+
+    def __str__(self):
+        return self.user.username
